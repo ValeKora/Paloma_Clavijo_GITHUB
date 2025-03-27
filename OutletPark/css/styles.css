@@ -1,0 +1,323 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    background-color: #f7f7f7;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.logo img {
+    height: 70px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: start; /* Alinea los elementos a la izquierda */
+    gap: 40px; /* Espacio entre elementos, ajusta según necesites */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 45%; /* Ajusta este valor para mover más a la izquierda */
+    transform: translateX(-20%);
+}
+
+nav ul li {
+    display: flex; /* Asegura que íconos y texto estén juntos */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    gap: 10px; /* Espaciado entre el ícono y el texto */
+    font-weight: bold; /* Para resaltar el texto */
+    color: #1f2242;
+    cursor: pointer; /* Es clickeable */
+}
+
+nav ul li img {
+    height: 30px;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(102, 51, 153, 0.8); /* Overlay púrpura */
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.banner-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.banner-content span {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.banner-images {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+
+.banner-images img {
+    width: 100vw;
+    height: 600px; /* Altura ajustada */
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+
+
+.pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #070707;
+}
+
+/* Categorías */
+.categories {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.categories h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.category-item {
+    position: relative; /* Necesario para que el h3 quede encima de la imagen */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.category-item h3 {
+    position: absolute; /* Coloca el texto encima de la imagen */
+    top: 50%; /* Ajusta la posición vertical */
+    left: 50%; /* Ajusta la posición horizontal */
+    transform: translate(-50%, -50%); /* Centra completamente el texto */
+    color: #fff; /* Color blanco para el texto */
+    font-size: 20px; /* Ajusta el tamaño de la fuente */
+    font-weight: bold; /* Negrita para resaltar */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Agrega un sombreado para mayor legibilidad */
+}
+
+
+.category-grid {
+    display: grid; /* Mantiene el diseño en cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta automáticamente el tamaño de las columnas */
+    gap: 20px; /* Espaciado entre los elementos */
+}
+
+.category-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay oscuro */
+}
+
+.category-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Mapa */
+.map {
+    padding: 20px;
+    background-color: #f5edff;
+    margin-bottom: 20px;
+}
+
+.map h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: rgb(58, 50, 138);
+    color: #f1f0f5;
+    padding: 20px 0;
+}
+
+.footer-sections {
+    display: flex;
+    flex-direction: column; /* Las imágenes de transporte primero */
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.transporte {
+  text-align: center; 
+   
+}
+
+.transporte {
+    display: flex;
+    justify-content: space-around; /* Distribuir imágenes de transporte */
+    gap: 20px;
+}
+
+.transporte img {
+    height: 80px; /* Imágenes más grandes */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.transporte img:hover {
+    transform: scale(1.1); /* Efecto hover */
+}
+
+.locomocion p {
+    font-size: 24px; /* Mismo tamaño que los encabezados */
+    font-weight: bold; /* Mismo grosor que los encabezados */
+    margin-bottom: 20px; /* Espaciado similar */
+    text-align: center; /* Centrado como los demás */
+}
+
+/* Colocar Dirección, Horario y Contacto en una fila */
+.footer-info {
+    display: flex;
+    justify-content: space-between; /* Alineación horizontal */
+    gap: 20px;
+    align-items: flex-start; /* Alinear verticalmente al inicio */
+}
+
+.direccion, .horario, .contacto {
+    flex: 1; /* Secciones ocupan espacio igual */
+    text-align: center;
+}
+
+.direccion iframe {
+    width: 100%;
+    max-width: 300px; /* Tamaño del mapa ajustado */
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.horario ul, .contacto ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contacto ul li, .horario ul li {
+    margin-bottom: 10px;
+}
+
+.contacto ul li img, .horario ul li img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.social-media a img {
+    height: 30px; /* Tamaño más pequeño */
+    width: 30px; /* Agregar ancho para asegurar proporción */
+    border-radius: 50%; /* Mantener el diseño circular */
+    transition: transform 0.3s ease; /* Efecto hover suave */
+}
+
+.social-media a img:hover {
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño al pasar el mouse */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-info {
+        flex-direction: column; /* En pantallas pequeñas, diseño vertical */
+        gap: 10px;
+    }
+
+    .transporte {
+        flex-direction: column; /* Alinear imágenes verticalmente */
+        gap: 10px;
+    }
+}
+
